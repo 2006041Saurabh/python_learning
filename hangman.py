@@ -1,5 +1,57 @@
 import random
-my_list = ["current" , "main","learning\n"]
+lives = 6
+stages = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''','''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+my_list = ["current" , "main","learning"]
 random_word = random.choice(my_list)
 
 print(random_word)
@@ -32,6 +84,14 @@ while not game_over:
 
     print(display)
 
+    if guess not in random_word:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("You Lose!")
+
     if "_" not in display:
         game_over = True
         print("You Win!")
+
+    print(stages[6-lives])
