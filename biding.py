@@ -11,6 +11,7 @@ while should_continue == True:
     more = input("Are there more persons\n").lower()
 
     if more == "yes":
+        print("\n" * 100)
         should_continue = True
     else:
         should_continue = False
@@ -24,4 +25,4 @@ for user in dic:
         highest_bid = b
         winner = user
 
-print(f"The winner of the bid is {winner}\n")
+print(f"The winner of the bid is {winner} with the bid of {highest_bid}\n")
